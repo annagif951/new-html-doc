@@ -1,0 +1,83 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-bottom: 2px solid #444;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+body {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+    grid-template-rows: auto 60px 1fr auto;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+           "content"
+           "cntact"
+            "main"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+        gap: 10px; /* Reduced gap for smaller screens */
+    }
+
+    nav {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: flex-start; /* Align links to the start */
+    }
+
+    nav a {
+        margin: 5px 0; /* Adjust margin for vertical layout */
+    }
+}
+
+
+
